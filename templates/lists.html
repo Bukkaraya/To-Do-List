@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    {{ board_name }} {{ super() }}
+{% endblock %}
+
+{% block content %}
+    {% for l in lists %}
+        <div>
+            <h3>{{ l.name }}</h3>
+            {% for task in tasks %}
+                {% for t in task %}
+                    {% if t.belongs_to_list.name == l.name %}
+                        <div> {{ t.task_name }} </div>
+                    {% endif %}
+                {% endfor %}
+            {% endfor %}
+    {% endfor %}
+        </div>
+{% endblock %}

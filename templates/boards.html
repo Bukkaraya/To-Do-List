@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+
+{% block title %} Boards {{ super() }} {% endblock %}
+
+{% block content %}
+    <h2>Boards Page</h2>
+    {% for board in boards %}
+    <div class="board">
+        <a href="b/{{ board.board_name }}"><h3>{{ board.board_name }}</h3></a>
+    </div>
+    {% endfor %}
+{% endblock %}
